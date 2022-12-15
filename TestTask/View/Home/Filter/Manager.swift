@@ -65,6 +65,7 @@ class MakeDropDown: UIView{
         dropDownTableView?.allowsSelection = true
         dropDownTableView?.isUserInteractionEnabled = true
         dropDownTableView?.tableFooterView = UIView()
+        dropDownTableView?.backgroundColor = .white
         self.addSubview(dropDownTableView!)
         
     }

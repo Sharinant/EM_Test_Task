@@ -67,6 +67,7 @@ class CartViewController: UIViewController {
         NavBar.RightButton.setBackgroundImage(UIImage(named: "location"), for: .normal)
         NavBar.locImage.isHidden = true
         NavBar.AddAdressLabel.font = UIFont(name: "Mark Pro", size: 18)
+        NavBar.AddAdressLabel.textColor = .black
         myCartLabel.textColor = colorBlue
     }
     

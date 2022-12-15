@@ -1,12 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="FontFont_FF.Mark.Pro.Medium.otf">
+            <string>MarkPro-Medium</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -19,6 +24,7 @@
                 <subviews>
                     <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vbD-sP-DHf">
                         <rect key="frame" x="5" y="10" width="168" height="34"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="35" id="u3i-W7-LQa"/>
                         </constraints>
@@ -34,10 +40,39 @@
                         <state key="normal" title="Button"/>
                         <buttonConfiguration key="configuration" style="plain" image="QRbuttonImage"/>
                     </button>
+                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CX5-hE-aKY">
+                        <rect key="frame" x="11" y="18" width="66" height="20"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Search" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m9x-ou-ADe">
+                                <rect key="frame" x="33" y="6" width="28" height="8"/>
+                                <fontDescription key="fontDescription" name="MarkPro-Medium" family="Mark Pro" pointSize="8"/>
+                                <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Find" translatesAutoresizingMaskIntoConstraints="NO" id="9ih-9a-a12">
+                                <rect key="frame" x="4" y="0.5" width="16" height="16"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="16" id="oKH-Bo-vcY"/>
+                                    <constraint firstAttribute="width" constant="16" id="oTc-KE-9ux"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="m9x-ou-ADe" firstAttribute="centerY" secondItem="CX5-hE-aKY" secondAttribute="centerY" id="C41-Gg-3Az"/>
+                            <constraint firstItem="9ih-9a-a12" firstAttribute="leading" secondItem="CX5-hE-aKY" secondAttribute="leading" constant="4" id="GSd-tp-DLF"/>
+                            <constraint firstAttribute="trailing" secondItem="m9x-ou-ADe" secondAttribute="trailing" constant="5" id="eGK-SX-KrA"/>
+                            <constraint firstItem="9ih-9a-a12" firstAttribute="centerY" secondItem="CX5-hE-aKY" secondAttribute="centerY" id="uGs-bD-w65"/>
+                            <constraint firstAttribute="width" constant="66" id="w4g-10-X6J"/>
+                        </constraints>
+                    </view>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
+                <constraint firstItem="vbD-sP-DHf" firstAttribute="leading" secondItem="CX5-hE-aKY" secondAttribute="trailing" constant="-72" id="Qfn-W2-Pom"/>
+                <constraint firstItem="CX5-hE-aKY" firstAttribute="centerY" secondItem="vbD-sP-DHf" secondAttribute="centerY" id="X8s-fn-Igp"/>
+                <constraint firstItem="CX5-hE-aKY" firstAttribute="top" secondItem="vbD-sP-DHf" secondAttribute="bottom" constant="-26" id="i6P-q4-epm"/>
                 <constraint firstItem="gMu-iV-jg5" firstAttribute="leading" secondItem="vbD-sP-DHf" secondAttribute="trailing" constant="15" id="kaK-dK-dtC"/>
                 <constraint firstItem="vbD-sP-DHf" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="om2-fS-Tg6"/>
                 <constraint firstAttribute="trailing" secondItem="gMu-iV-jg5" secondAttribute="trailing" constant="10" id="yDq-6T-yMV"/>
@@ -52,6 +87,7 @@
         </collectionViewCell>
     </objects>
     <resources>
+        <image name="Find" width="16" height="16"/>
         <image name="QRbuttonImage" width="74" height="74"/>
     </resources>
 </document>

@@ -147,6 +147,7 @@ class FilterOptions: UIView {
     }
     
     func setUpDropDown(by view : CGRect){
+        dropDown.backgroundColor = .white
     dropDown.makeDropDownIdentifier = "DROP_DOWN_NEW"
     dropDown.makeDropDownDataSourceProtocol = self
     dropDown.setUpDropDown(viewPositionReference: (view), offset: 0)

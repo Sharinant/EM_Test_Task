@@ -29,7 +29,8 @@ class BestSellerCollectionViewCell: UICollectionViewCell {
 
     let TitleLabel : UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 10)
+        label.font = UIFont(name: "Mark Pro", size: 10)
+        label.textColor = .black
         return label
     }()
     
@@ -42,7 +43,7 @@ class BestSellerCollectionViewCell: UICollectionViewCell {
     
     let NewPriceLabel : UILabel = {
         let label = UILabel()
-        
+        label.textColor = .black
         return label
     }()
     
@@ -50,8 +51,11 @@ class BestSellerCollectionViewCell: UICollectionViewCell {
         setup()
         PhoneimageView.sd_setImage(with: URL(string: model.image))
         TitleLabel.text = model.title
+        
+        let attributeString: NSMutableAttributedString = NSMutableAttributedString(string: "$" + String(format: "%g", model.oldPrice))
+            attributeString.addAttribute(NSAttributedString.Key.strikethroughStyle, value: 2, range: NSRange(location: 0, length: attributeString.length))
         NewPriceLabel.text = "$" + String(format: "%g", model.newPrice)
-        OldPriceLabel.text = "$" + String(format: "%g", model.oldPrice)
+        OldPriceLabel.attributedText = attributeString
         favoriteButton.addTarget(self, action: #selector(favoriteAction), for: .touchUpInside)
         contentView.layer.cornerRadius = 10
         createShadow()

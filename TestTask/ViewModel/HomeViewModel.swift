@@ -90,6 +90,7 @@ class HomeViewModel {
             newPrice: $0.price_without_discount)
             
         }))
+        print(array)
         return array
     }
     
