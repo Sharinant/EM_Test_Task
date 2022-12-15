@@ -1,7 +1,7 @@
 # EM_Test_Task
 
 * Тестовое задание
-* 
+
 * Swift
 * UIKit
 * MVVM + C
